@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>تسجيل جديد - رحلات مكة</title>
+  <style>
+    body {
+      background-color: #f3f0e7;
+      font-family: 'Tahoma', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .register-box {
+      background-color: #fff;
+      border-radius: 20px;
+      box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+      width: 360px;
+      padding: 30px;
+      text-align: center;
+      border: 1px solid #e0d6c3;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #222;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      text-align: right;
+    }
+
+    .password-container {
+      position: relative;
+      margin: 8px 0;
+    }
+
+    .password-container input {
+      padding-left: 60px;
+    }
+
+    .toggle-password {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+      color: #8b6d35;
+      padding: 5px;
+    }
+
+    .register-btn {
+      background-color: #bfa76f;
+      color: white;
+      border: none;
+      padding: 12px;
+      width: 100%;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+
+    .register-btn:hover {
+      background-color: #a58f4d;
+    }
+
+    a {
+      display: block;
+      margin-top: 15px;
+      color: #8b6d35;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="register-box">
+    <h2>تسجيل جديد</h2>
+    <form method="POST" action="register.php">
+      <input type="text" name="username" placeholder="اسم المستخدم" required>
+      <input type="email" name="email" placeholder="البريد الإلكتروني" required>
+
+      <div class="password-container">
+        <input type="password" id="password" name="password" placeholder="كلمة المرور" required>
+        <button type="button" class="toggle-password" onclick="togglePassword('password')">إظهار</button>
+      </div>
+
+      <div class="password-container">
+        <input type="password" id="confirm_password" name="confirm_password" placeholder="تأكيد كلمة المرور" required>
+        <button type="button" class="toggle-password" onclick="togglePassword('confirm_password')">إظهار</button>
+      </div>
+
+      <button type="submit" class="register-btn">إنشاء حساب</button>
+    </form>
+
+    <a href="Log_in.html">لديك حساب؟ تسجيل الدخول</a>
+    <a href="homee.html">العودة إلى الرئيسية</a>
+  </div>
+
+  <script>
+    function togglePassword(fieldId) {
+      const input = document.getElementById(fieldId);
+      input.type = input.type === "password" ? "text" : "password";
+    }
+  </script>
+
+</body>
+</html>

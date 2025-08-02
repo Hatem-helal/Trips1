@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>رحلة ساحة الحرم</title>
+  <style>
+    body {
+      background-color: #f3f0e7;
+      font-family: 'Tahoma', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .trip-box {
+      background-color: #fff;
+      border-radius: 20px;
+      box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+      width: 360px;
+      padding: 30px;
+      text-align: center;
+      border: 1px solid #e0d6c3;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #8b6d35;
+    }
+
+    .trip-image {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      max-height: 200px;
+      object-fit: cover;
+      border: 1px solid #ccc;
+    }
+
+    label {
+      display: block;
+      text-align: right;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input[type="number"],
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      text-align: right;
+      font-size: 14px;
+    }
+
+    .price-box {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #bfa76f;
+      color: white;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+
+    .seats-box {
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #e7dbb9;
+      color: #333;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: bold;
+    }
+
+    .confirm-btn {
+      background-color: #bfa76f;
+      color: white;
+      border: none;
+      padding: 12px;
+      width: 100%;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+
+    .confirm-btn:hover {
+      background-color: #a58f4d;
+    }
+
+    a.back {
+      display: block;
+      margin-top: 15px;
+      color: #8b6d35;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    a.back:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="trip-box">
+    <h2>رحلة إلى ساحة الحرم</h2>
+
+    <img src="images/haram.jpg" alt="ساحة الحرم" class="trip-image">
+
+    <div style="background-color:#f9f5ee; padding: 10px; border-radius: 8px; border: 1px solid #ccc; margin-bottom: 15px;">
+      <p style="margin: 5px 0;"><strong>موعد الانطلاق:</strong> الساعة 12:00 مساء</p>
+      <p style="margin: 5px 0;"><strong>موعد العودة:</strong> الساعة 3:00 مساء</p>
+    </div>
+
+    <!-- نموذج الحجز -->
+    <form method="POST" action="book_trip.php">
+      <input type="hidden" name="trip_name" value="ساحة الحرم">
+
+      <label for="trip-day">يوم الانطلاق</label>
+      <select id="trip-day" name="trip_day" required>
+        <option value="">-- اختر اليوم --</option>
+        <option value="الأحد">الأحد</option>
+        <option value="الاثنين">الاثنين</option>
+        <option value="الثلاثاء">الثلاثاء</option>
+        <option value="الأربعاء">الأربعاء</option>
+        <option value="الخميس">الخميس</option>
+        <option value="الجمعة">الجمعة</option>
+        <option value="السبت">السبت</option>
+      </select>
+
+      <label for="payment">طريقة الدفع</label>
+      <select id="payment" name="payment_method" required>
+        <option value="">-- اختر --</option>
+        <option value="نقداً">نقداً</option>
+        <option value="تحويل بنكي">تحويل بنكي</option>
+        <option value="دفع إلكتروني">دفع إلكتروني</option>
+      </select>
+
+      <label for="seat-count">عدد المقاعد</label>
+      <input type="number" id="seat-count" name="seat_count" min="1" max="20" value="1" required>
+
+      <div class="price-box">
+        السعر: <span id="price">100</span> ر.س
+      </div>
+
+      <div class="seats-box">
+        المقاعد المتاحة: 20
+      </div>
+
+      <button type="submit" class="confirm-btn">تأكيد الحجز</button>
+    </form>
+
+    <a href="Trips.html" class="back">عودة إلى جدول الرحلات</a>
+  </div>
+
+  <script>
+    const seatInput = document.getElementById('seat-count');
+    const priceDisplay = document.getElementById('price');
+    const pricePerSeat = 100;
+
+    seatInput.addEventListener('input', () => {
+      const count = parseInt(seatInput.value) || 1;
+      priceDisplay.textContent = count * pricePerSeat;
+    });
+  </script>
+
+</body>
+</html>

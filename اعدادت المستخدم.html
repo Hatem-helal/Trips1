@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>إعدادات المستخدم</title>
+  <style>
+    body {
+      background-color: #f4f1eb;
+      font-family: 'Tahoma', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .settings-box {
+      background-color: #fff;
+      width: 360px;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      border: 1px solid #e0d6c3;
+      text-align: right;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #8b6d35;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+
+    .save-btn {
+      background-color: #bfa76f;
+      color: white;
+      border: none;
+      padding: 12px;
+      width: 100%;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    .save-btn:hover {
+      background-color: #a58f4d;
+    }
+
+    a.back {
+      display: block;
+      margin-top: 15px;
+      color: #8b6d35;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    a.back:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="settings-box">
+    <h2>إعدادات المستخدم</h2>
+
+    <label for="username">الاسم الكامل</label>
+    <input type="text" id="username" name="username" placeholder="أدخل اسمك">
+
+    <label for="email">البريد الإلكتروني</label>
+    <input type="email" id="email" name="email" placeholder="example@email.com">
+
+    <label for="password">كلمة المرور</label>
+    <input type="password" id="password" name="password" placeholder="****">
+
+    <button class="save-btn">حفظ التغييرات</button>
+
+    <a href="index.html" class="back">العودة إلى الصفحة الرئيسية</a>
+  </div>
+
+</body>
+</html>

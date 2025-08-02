@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>معلومات الدفع</title>
+  <style>
+    body {
+      background-color: #f3f0e7;
+      font-family: 'Tahoma', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .payment-box {
+      background-color: #fff;
+      border-radius: 20px;
+      box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+      width: 360px;
+      padding: 30px;
+      border: 1px solid #e0d6c3;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #222;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      text-align: right;
+      box-sizing: border-box;
+    }
+
+    .confirm-btn {
+      background-color: #bfa76f;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      width: 100%;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .confirm-btn:hover {
+      background-color: #a58f4d;
+    }
+
+    .back-home {
+      display: block;
+      margin-top: 15px;
+      color: #8b6d35;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .back-home:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="payment-box">
+    <h2>معلومات الدفع</h2>
+    <form method="POST" action="confirm.php">
+      <input type="text" name="card_name" placeholder="اسم حامل البطاقة" required>
+      <input type="text" name="card_number" placeholder="رقم البطاقة" required maxlength="16">
+      <input type="text" name="expiry_date" placeholder="تاريخ الانتهاء (MM/YY)" required maxlength="5">
+      <input type="text" name="cvv" placeholder="رمز الأمان (CVV)" required maxlength="3">
+      <button type="submit" class="confirm-btn">تأكيد الدفع</button>
+    </form>
+    <a href="Homee.html" class="back-Homee">العودة للرئيسية</a>
+  </div>
+
+</body>
+</html>

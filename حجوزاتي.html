@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>حجوزاتي</title>
+  <style>
+    body {
+      background-color: #f4f1eb;
+      font-family: 'Tahoma', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+    }
+
+    .bookings-box {
+      background-color: #fff;
+      width: 90%;
+      max-width: 500px;
+      padding: 30px;
+      margin-top: 50px;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      border: 1px solid #e0d6c3;
+      text-align: right;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #8b6d35;
+    }
+
+    .booking-item {
+      background-color: #f8f6f2;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 15px;
+    }
+
+    .booking-item strong {
+      color: #a78b60;
+    }
+
+    a.back {
+      display: block;
+      margin-top: 20px;
+      color: #8b6d35;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    a.back:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bookings-box">
+    <h2>حجوزاتي</h2>
+
+    <!-- هنا سيتم عرض الحجوزات من ملف PHP -->
+    <?php include 'bookings.php'; ?>
+
+    <a href="Homee.html" class="back">العودة إلى الصفحة الرئيسية</a>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>صفحة الدفع</title>
+  <style>
+    body {
+      background-color: #f3f0e7;
+      font-family: 'Tahoma', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .payment-box {
+      background-color: #fff;
+      border-radius: 20px;
+      box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+      width: 360px;
+      padding: 30px;
+      text-align: center;
+      border: 1px solid #e0d6c3;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #8b6d35;
+    }
+
+    label {
+      display: block;
+      text-align: right;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input[type="number"],
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      text-align: right;
+      font-size: 14px;
+    }
+
+    .payment-option {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+      background-color: #f8f5ee;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+    }
+
+    .confirm-btn {
+      background-color: #bfa76f;
+      color: white;
+      border: none;
+      padding: 12px;
+      width: 100%;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    .confirm-btn:hover {
+      background-color: #a58f4d;
+    }
+
+    .price-box {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #bfa76f;
+      color: white;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+
+    a.back {
+      display: block;
+      margin-top: 15px;
+      color: #8b6d35;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    a.back:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="payment-box">
+    <h2>الدفع للرحلة</h2>
+
+    <!-- عدد المقاعد -->
+    <label for="seat-count">عدد المقاعد</label>
+    <input type="number" id="seat-count" name="seat_count" min="1" max="20" value="1" required>
+
+    <!-- السعر -->
+    <div class="price-box">
+      السعر الإجمالي: <span id="price">110</span> ر.س
+    </div>
+
+    <!-- خيارات الدفع -->
+    <label>اختر طريقة الدفع</label>
+
+    <div class="payment-option">
+      <label for="apple-pay">Apple Pay</label>
+      <input type="radio" id="apple-pay" name="payment_method" value="apple-pay">
+    </div>
+
+    <div class="payment-option">
+      <label for="visa">فيزا</label>
+      <input type="radio" id="visa" name="payment_method" value="visa">
+    </div>
+
+    <div class="payment-option">
+      <label for="mada">مدى</label>
+      <input type="radio" id="mada" name="payment_method" value="mada">
+    </div>
+
+    <!-- زر التأكيد -->
+    <form action="اتمام الدفع.html" method="get">
+      <button type="submit" class="confirm-btn">اتمام الدفع</button>
+    </form>
+    <!-- رابط العودة -->
+    <a href="trips.html" class="back">عودة إلى جدول الرحلات</a>
+  </div>
+
+  <script>
+    const seatInput = document.getElementById('seat-count');
+    const priceDisplay = document.getElementById('price');
+    const pricePerSeat = 110;
+
+    seatInput.addEventListener('input', () => {
+      const count = parseInt(seatInput.value) || 1;
+      priceDisplay.textContent = count * pricePerSeat;
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>خدمة العملاء - رحلات مكة</title>
+  <style>
+    body {
+      background-color: #f3f0e7;
+      font-family: 'Tahoma', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .service-box {
+      background-color: #fff;
+      border-radius: 20px;
+      box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+      width: 360px;
+      padding: 30px;
+      text-align: center;
+      border: 1px solid #e0d6c3;
+      box-sizing: border-box;
+    }
+    .service-box h2 {
+      margin-bottom: 20px;
+      color: #222;
+    }
+    .service-box p.contact-info {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+    .service-box input[type="text"],
+    .service-box input[type="email"],
+    .service-box input[type="tel"],
+    .service-box textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      text-align: right;
+      box-sizing: border-box;
+      resize: vertical;
+      font-family: inherit;
+    }
+    .service-box textarea {
+      min-height: 100px;
+    }
+    .service-btn {
+      background-color: #bfa76f;
+      color: white;
+      border: none;
+      padding: 12px;
+      width: 100%;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+    .service-btn:hover {
+      background-color: #a58f4d;
+    }
+    a.back-Homee {
+      display: block;
+      margin-top: 15px;
+      color: #8b6d35;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    a.back-Homee.service-box {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="service-box">
+    <h2>خدمة العملاء</h2>
+    <p class="contact-info">
+      لأي استفسار أو مساعدة، يمكنك ملء النموذج أدناه أو التواصل معنا عبر:<br>
+      هاتف: 0554774022<br>
+      بريد إلكتروني: s445005081@uqu.edu.sa 
+    </p>
+
+    <form method="POST" action="submit_ticket.php">
+      <input type="text" name="name" placeholder="الاسم الكامل" required>
+      <input type="email" name="email" placeholder="البريد الإلكتروني" required>
+      <input type="tel" name="phone" placeholder="رقم الجوال (اختياري)">
+
+      <textarea name="message" placeholder="اكتب رسالتك هنا..." required></textarea>
+
+      <button type="submit" class="service-btn">إرسال</button>
+    </form>
+
+    <a href="Homee.html" class="back-Homee">العودة للرئيسية</a>
+  </div>
+
+</body>
+</html>

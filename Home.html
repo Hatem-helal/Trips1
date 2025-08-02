@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>رحلات مكة - حجز الرحلات</title>
+  <style>
+    body {
+      font-family: 'Tahoma', sans-serif;
+      background: #f4f1eb;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #a78b60;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav a {
+      margin: 0 15px;
+      color: white;
+      text-decoration: none;
+    }
+    .content {
+      padding: 30px;
+      text-align: center;
+    }
+    .card {
+      background-color: white;
+      margin: 20px auto;
+      padding: 20px;
+      width: 70%;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      text-align: right;
+    }
+    .btn {
+      background-color: #a78b60;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .menu-icon {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 26px;
+      cursor: pointer;
+      z-index: 1000;
+    }
+    .dropdown-menu {
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      display: none;
+      flex-direction: column;
+      min-width: 160px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      z-index: 999;
+    }
+    .dropdown-menu a {
+      padding: 12px 16px;
+      text-decoration: none;
+      color: #333;
+      border-bottom: 1px solid #eee;
+      display: block;
+    }
+    .dropdown-menu a:hover {
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+    <div class="dropdown-menu" id="menu">
+      <a href="حجوزاتي.html">حجوزاتي</a>
+      <a href="صفحة الدفع.html">خيارات الدفع</a>
+    </div>
+
+    <h1>🌟 منصة حجز رحلات داخل مكة 🌟</h1>
+    <nav>
+      <a href="Trips.html">الرحلات</a> |
+      <a href="Customer_Service.html">اتصل بنا</a>
+    </nav>
+  </header>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.style.display = (menu.style.display === 'flex') ? 'none' : 'flex';
+    }
+
+    document.addEventListener('click', function(event) {
+      const menu = document.getElementById('menu');
+      const icon = document.querySelector('.menu-icon');
+      if (!menu.contains(event.target) && !icon.contains(event.target)) {
+        menu.style.display = 'none';
+      }
+    });
+  </script>
+
+  <div class="content">
+    <div class="card">
+      <h3>تحسين تجربة السياح</h3>
+      <p>منصة سهلة لحجز الرحلات داخل مكة المكرمة بأسلوب بسيط وسلس</p>
+    </div>
+    <div class="card">
+      <h3>التكامل مع الخدمات</h3>
+      <p>نوفر لك خدمات النقل، الإقامة، والأنشطة السياحية في مكان واحد</p>
+    </div>
+    <div class="card">
+      <h3>خدمات الدفع الإلكتروني</h3>
+      <p>خيارات دفع آمنة وسريعة تشمل مدى، Apple Pay، وفيزا</p>
+      <a href="Trips.html">
+        <button class="btn">احجز الآن</button>
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>
